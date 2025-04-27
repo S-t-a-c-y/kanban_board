@@ -4,7 +4,6 @@
 }
 
 * {
-    /* min-width: 600px; */
     outline: 1px solid red; /* допоможе візуально побачити блоки */
   }
 
@@ -21,12 +20,13 @@ header {
     gap: 50px;
     justify-content: center;
     background-color: rgba(245, 248, 250, 1);
-    padding: 0px 105px;
+    padding: 40px 100px;
 }
 
 .header {
     display: flex;
-    padding: 70px 0 67px 105px;
+    justify-content: space-between;
+    padding: 70px 100px;
     background-color: #E9F0F4;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -35,6 +35,15 @@ h1 {
     color: #455266;
     font-weight: 500;
     font-size: 40px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+h2 {
+    color: #455266;
+    font-weight: 700;
+    font-size: 16px;
     font-family: 'Roboto', sans-serif;
     padding-right: 60px;
     line-height: 100%;
@@ -100,12 +109,12 @@ p, label {
 }
 
 .card {
-    width: 300px;
+    width: 270px;
+    box-sizing: border-box;
     padding: 16px 22px 16px 16px;
     border: solid 1px #EEEEEE;
     border-radius: 10px;
     margin-top: 20px;
-    /* margin-right: 40px; */
     background-color: white;
 }
 
@@ -129,15 +138,25 @@ p, label {
     font-size: 12px;
 }
 
-@media (min-width: 600px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .content {
         flex-wrap: wrap;
+        padding: 40px 50px;
     }
 }
 
-@media (max-width: 599px) {
-    .content{
+@media (min-width: 601px) and (max-width: 768px) {
+    .content {
         flex-wrap: wrap;
+        gap: 20px;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content {
+        flex-wrap: wrap;
+        padding: 40px 150px;
     }
 }
 
