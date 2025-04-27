@@ -3,6 +3,11 @@
     src: url(../kanban-board/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
 }
 
+* {
+    /* min-width: 600px; */
+    outline: 1px solid red; /* допоможе візуально побачити блоки */
+  }
+
 header {
     position: fixed;
     top: 0;
@@ -12,8 +17,9 @@ header {
 
 .content {
     margin-top: 180px;
-    min-width: 1024px;
     display: flex;
+    gap: 50px;
+    justify-content: center;
     background-color: rgba(245, 248, 250, 1);
     padding: 0px 105px;
 }
@@ -86,7 +92,9 @@ p, label {
     border-color: #E9F0F4;
 }
 
-.backlog {
+.backlog,
+.in-progress,
+.done {
     display: flex;
     flex-direction: column;
 }
@@ -97,7 +105,7 @@ p, label {
     border: solid 1px #EEEEEE;
     border-radius: 10px;
     margin-top: 20px;
-    margin-right: 40px;
+    /* margin-right: 40px; */
     background-color: white;
 }
 
@@ -131,22 +139,17 @@ p, label {
     .content{
         flex-wrap: wrap;
     }
-
-    .card {
-        margin: 20px 150px 20px 150px;
-    }
 }
 
 .modal-window {
     margin: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 30px;
     width: 300px;
-    padding-left: 20px;
     border: solid 1px rgba(238, 238, 238, 1);
     border-radius: 10px;
+    color: rgba(69, 82, 102, 1);
 }
 
 h2 {
@@ -158,19 +161,68 @@ h2 {
 .form {
     display: flex;
     flex-direction: column;
-    padding-bottom: 5px;
-}
-
-.add {
-    display: flex;
-    justify-content: end;
 }
 
 .text {
+    margin: 0 auto;
+}
+
+.input-task {
     width: 264px;
+    height: 26px;
+    border: solid 1px rgba(238, 238, 238, 1);
+    border-radius: 5px;
+}
+
+.form-select {
+    border: solid 1px rgba(238, 238, 238, 1);
+    border-radius: 5px;
+    width: 182px;
     height: 26px;
 }
 
 .select {
+    padding-left: 18px;
+}
+
+.label-name {
+    padding-bottom: 5px;
+}
+
+.add-task {
+    padding: 20px 20px 0 20px;
+    display: flex;
+    justify-content: end;
+    gap: 60px;
+}
+
+.form-date {
+    padding-left: 18px;
+    align-items: flex-start;
+}
+
+.type-date {
+    border: solid 1px rgba(238, 238, 238, 1);
+    border-radius: 5px;
     width: 182px;
+    height: 26px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 20px 20px;
+}
+
+.button {
+    width: 115px;
+    height: 26px;
+    border: rgba(238, 238, 238, 1);
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    color: rgba(69, 82, 102, 1);
+}
+
+.add {
+    background-color: rgba(233, 255, 227, 1);;
 }
