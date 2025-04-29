@@ -3,10 +3,6 @@
     src: url(../kanban-board/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
 }
 
-* {
-    outline: 1px solid red; /* допоможе візуально побачити блоки */
-  }
-
 header {
     position: fixed;
     top: 0;
@@ -14,22 +10,29 @@ header {
     width: 100%;
 }
 
+.container-main {
+    padding: 40px 80px;
+    background-color: rgba(245, 248, 250, 1);
+}
+
 .content {
     margin-top: 180px;
     display: flex;
-    gap: 50px;
-    justify-content: center;
-    background-color: rgba(245, 248, 250, 1);
-    padding: 40px 100px;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    padding: 70px 100px;
+.container-header {
+    padding: 70px 80px;
     background-color: #E9F0F4;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+
+.header {
+    display: flex;
+    gap: 60px;
+}   
 
 h1 {
     color: #455266;
@@ -139,25 +142,43 @@ p, label {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .container-header {
+        padding: 50px 100px;
+    }
+
+    .container-main{
+        padding: 20px 100px;
+    }
     .content {
         flex-wrap: wrap;
-        padding: 40px 50px;
     }
 }
 
 @media (min-width: 601px) and (max-width: 768px) {
+    .container-header {
+        padding: 50px 20px;
+    }
+
+    .container-main{
+        padding: 20px 20px;
+    }
+
     .content {
         flex-wrap: wrap;
-        gap: 20px;
-        padding: 40px 20px;
     }
 }
 
 @media (max-width: 600px) {
     .content {
         flex-wrap: wrap;
-        padding: 40px 150px;
+        justify-content: center;
     }
+
+    .header {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
 }
 
 .modal-window {
