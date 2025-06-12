@@ -131,7 +131,7 @@ p, label {
     padding-right: 4px;
 }
 
-#low {
+.low {
     background-color: rgba(14, 172, 193, 0.1);
     color: rgba(14, 172, 193, 1);
     border-radius: 100px;

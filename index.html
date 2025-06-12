@@ -6,15 +6,17 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <title>kanban-board</title>
+    <script src="script.js"></script>
 </head>
 <body>
+    <div id="home">
     <header class="container-header">
         <div class="header">
             <h1>Kanban Board</h1>
-            <button class="createTask">Create a New Task</button>
+            <button class="createTask" onclick="showModal()">Create a New Task</button>
         </div>
     </header>
-    
+
     <main class="container-main">
         <div class="content">
             <div class="backlog">
@@ -22,23 +24,23 @@
             <div class="card">
                 <div class="title">
                     <div class="task">
-                        <h2>Task Title</h2>
+                        <h2 id="title-1">Task Title</h2>
                         <img src="Group 13.svg">
                     </div>
-                    <p>Task Discription</p>
+                    <p id="description-1">Task Discription</p>
                 </div>
                 <div class="assigned">
                     <p class="bold-text">Assigned:</p>
                     <img class="photo" src="Ellipse 1.png">
-                    <p>Jochn Doe</p>
+                    <p id="name-1">Jochn Doe</p>
                 </div>
                 <div class="priority">
                     <p class="bold-text">Priority:</p>
-                    <div id="low">Low</div>
+                    <div class="low" id="priority-1">Low</div>
                 </div>
-                <div class="date">
+                <div class="date" id="date">
                     <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
+                    <p id="date-1">04/13/2020</p>
                 </div>
                 <div class="tag">
                     <div class="tag-box">+Tag</div>
@@ -60,7 +62,7 @@
                 </div>
                 <div class="priority">
                     <p class="bold-text">Priority:</p>
-                    <div id="low">Low</div>
+                    <div class="low">Low</div>
                 </div>
                 <div class="date">
                     <p class="bold-text">Due Date: </p>
@@ -107,7 +109,7 @@
                 </div>
                 <div class="priority">
                     <p class="bold-text">Priority:</p>
-                    <div id="low">Low</div>
+                    <div class="low">Low</div>
                 </div>
                 <div class="date">
                     <p class="bold-text">Due Date: </p>
@@ -133,7 +135,7 @@
                 </div>
                 <div class="priority">
                     <p class="bold-text">Priority:</p>
-                    <div id="low">Low</div>
+                    <div class="low">Low</div>
                 </div>
                 <div class="date">
                     <p class="bold-text">Due Date: </p>
@@ -159,7 +161,7 @@
                 </div>
                 <div class="priority">
                     <p class="bold-text">Priority:</p>
-                    <div id="low">Low</div>
+                    <div class="low">Low</div>
                 </div>
                 <div class="date">
                     <p class="bold-text">Due Date: </p>
@@ -188,7 +190,7 @@
                 </div>
                 <div class="priority">
                     <p class="bold-text">Priority:</p>
-                    <div id="low">Low</div>
+                    <div class="low">Low</div>
                 </div>
                 <div class="date">
                     <p class="bold-text">Due Date: </p>
@@ -214,7 +216,7 @@
                 </div>
                 <div class="priority">
                     <p class="bold-text">Priority:</p>
-                    <div id="low">Low</div>
+                    <div class="low">Low</div>
                 </div>
                 <div class="date">
                     <p class="bold-text">Due Date: </p>
@@ -227,6 +229,49 @@
             </div>
             </div>
         </div>
+    </div>
+
+    <div id="modal" style="display: none;">
+        <div class="modal-window">
+            <div class="add-task">
+                <h2>Add a New Task</h2>
+                <img src="Group 13.svg">
+            </div>
+            <div class="form text">
+                <label class="label-name">Task Title</label>
+                <input type="text" id="title" class="input-task">
+            </div>
+            <div class="form text">
+                <label class="label-name">Task description</label>
+                <input type="text" id="description" class="input-task">
+            </div>
+            <div class="form select">
+                <label class="label-name">Assignee</label>
+                <select id="assignee" class="form-select">
+                    <option></option>
+                    <option>Lohn Doe</option>
+                    <option>Jane Doe</option>
+                </select>
+            </div>
+            <div class="form select">
+                <label class="label-name">Priority</label>
+                <select id="priority" class="form-select">
+                    <option></option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+                </select>
+            </div>
+            <div class="form form-date">
+                <label class="label-name">Due Date</label>
+                <input id="date-modal" type="date" class="type-date">
+            </div>
+            <div class="button-container">
+                <button class="button">Cancel</button>
+                <button class="button add" onclick="addFunction()">Add</button>
+            </div>
+        </div>
+    </div>
 </main>
 </body>
 </html>
