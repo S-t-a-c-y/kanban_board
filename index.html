@@ -1,307 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
     <title>kanban-board</title>
-    <script src="script.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="home">
-    <header class="container-header">
+      <header class="container-header">
         <div class="header">
-            <h1>Kanban Board</h1>
-            <button class="createTask" onclick="showModal()">Create a New Task</button>
+          <h1>Kanban Board</h1>
+          <button class="createTask" onclick="showModal()">
+            Create a New Task
+          </button>
         </div>
-    </header>
+      </header>
 
-    <main class="container-main">
+      <main class="container-main">
         <div class="content">
-            <div class="backlog">
+          <div class="backlog">
             <h2>BACKLOG</h2>
             <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2 id="title-1">Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p id="description-1">Task Discription</p>
+              <div class="card-header">
+                <div class="task">
+                  <h2 id="title-0"></h2>
+                  <button id = "delete-btn" class="buttons-card" onclick="deleteTask(this)">
+                    <img src="Group 13.svg" />
+                  </button>
                 </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 1.png">
-                    <p id="name-1">Jochn Doe</p>
-                </div>
-                <div class="priority">
-                    <p class="bold-text">Priority:</p>
-                    <div class="low" id="priority-1">Low</div>
-                </div>
-                <div class="date" id="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p id="date-1">04/13/2020</p>
-                </div>
-                <div class="tag">
-                    <div class="tag-box">+Tag</div>
-                    <button class="buttons-card">
-                        <img src="Star 1.svg">
-                    </button>
-                </div>
+                <p id="description-0">Task Discription</p>
+              </div>
+              <div class="assigned">
+                <p class="bold-text">Assigned:</p>
+                <img id="photo-0" class="photo" src="" />
+                <p id="name-0"></p>
+              </div>
+              <div class="priority">
+                <p class="bold-text">Priority:</p>
+                <div class="low" id="priority-0">Low</div>
+              </div>
+              <div class="date" id="date">
+                <p class="bold-text">Due Date:</p>
+                <p id="date-0">04/13/2020</p>
+              </div>
+              <div class="tag">
+                <div class="tag-box">+Tag</div>
+                <button
+                  id="edit-btn"
+                  class="buttons-card"
+                  onclick="prepareFormForTaskUpdate(this)"
+                >
+                  <img src="Star 1.svg" />
+                </button>
+              </div>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2>Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p>Task Discription</p>
-                </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 1.png">
-                    <p>Jochn Doe</p>
-                </div>
-                <div class="priority">
-                    <p class="bold-text">Priority:</p>
-                    <div class="low">Low</div>
-                </div>
-                <div class="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
-                </div>
-                <div class="tag">
-                    <div class="tag-box">+Tag</div>
-                    <button class="buttons-card">
-                        <img src="Star 1.svg">
-                    </button>
-                </div>
-            </div>
+             
             </div>
             <div class="in-progress">
             <h2>IN PROGRESS</h2>
-            <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2>Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p>Task Discription</p>
-                </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 2.png">
-                    <p>Jane Doe</p>
-                </div>
-                <div class="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2>Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p>Task Discription</p>
-                </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 1.png">
-                    <p>Jochn Doe</p>
-                </div>
-                <div class="priority">
-                    <p class="bold-text">Priority:</p>
-                    <div class="low">Low</div>
-                </div>
-                <div class="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
-                </div>
-                <div class="tag">
-                    <div class="tag-box">+Tag</div>
-                    <button class="buttons-card">
-                        <img src="Star 1.svg">
-                    </button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2>Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p>Task Discription</p>
-                </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 1.png">
-                    <p>Jochn Doe</p>
-                </div>
-                <div class="priority">
-                    <p class="bold-text">Priority:</p>
-                    <div class="low">Low</div>
-                </div>
-                <div class="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
-                </div>
-                <div class="tag">
-                    <div class="tag-box">+Tag</div>
-                    <button class="buttons-card">
-                        <img src="Star 1.svg">
-                    </button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2>Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p>Task Discription</p>
-                </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 1.png">
-                    <p>Jochn Doe</p>
-                </div>
-                <div class="priority">
-                    <p class="bold-text">Priority:</p>
-                    <div class="low">Low</div>
-                </div>
-                <div class="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
-                </div>
-                <div class="tag">
-                    <div class="tag-box">+Tag</div>
-                    <button class="buttons-card">
-                        <img src="Star 1.svg">
-                    </button>
-                </div>
-            </div>
+            
             </div>
             <div class="done">
             <h2>DONE</h2>
-            <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2>Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p>Task Discription</p>
-                </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 1.png">
-                    <p>Jochn Doe</p>
-                </div>
-                <div class="priority">
-                    <p class="bold-text">Priority:</p>
-                    <div class="low">Low</div>
-                </div>
-                <div class="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
-                </div>
-                <div class="tag">
-                    <div class="tag-box">+Tag</div>
-                    <button class="buttons-card">
-                        <img src="Star 1.svg">
-                    </button>
-                </div>
+            
             </div>
-            <div class="card">
-                <div class="card-header">
-                    <div class="task">
-                        <h2>Task Title</h2>
-                        <button class="buttons-card">
-                            <img src="Group 13.svg">
-                        </button>
-                    </div>
-                    <p>Task Discription</p>
-                </div>
-                <div class="assigned">
-                    <p class="bold-text">Assigned:</p>
-                    <img class="photo" src="Ellipse 1.png">
-                    <p>Jochn Doe</p>
-                </div>
-                <div class="priority">
-                    <p class="bold-text">Priority:</p>
-                    <div class="low">Low</div>
-                </div>
-                <div class="date">
-                    <p class="bold-text">Due Date: </p>
-                    <p>04/13/2020</p>
-                </div>
-                <div class="tag">
-                    <div class="tag-box">+Tag</div>
-                    <button class="buttons-card">
-                        <img src="Star 1.svg">
-                    </button>
-                </div>
-            </div>
-            </div>
+          </div>
         </div>
+      </main>
     </div>
 
-    <div id="modal" style="display: none;">
-        <div class="modal-window">
-            <div class="add-task">
-                <h2>Add a New Task</h2>
-                <img src="Group 13.svg">
-            </div>
-            <div class="form text">
-                <label class="label-name">Task Title</label>
-                <input type="text" id="title" class="input-task">
-            </div>
-            <div class="form text">
-                <label class="label-name">Task description</label>
-                <input type="text" id="description" class="input-task">
-            </div>
-            <div class="form select">
-                <label class="label-name">Assignee</label>
-                <select id="assignee" class="form-select">
-                    <option></option>
-                    <option>Lohn Doe</option>
-                    <option>Jane Doe</option>
-                </select>
-            </div>
-            <div class="form select">
-                <label class="label-name">Priority</label>
-                <select id="priority" class="form-select">
-                    <option></option>
-                    <option>Low</option>
-                    <option>Medium</option>
-                    <option>High</option>
-                </select>
-            </div>
-            <div class="form form-date">
-                <label class="label-name">Due Date</label>
-                <input id="date-modal" type="date" class="type-date">
-            </div>
-            <div class="button-container">
-                <button class="button">Cancel</button>
-                <button class="button add" onclick="addFunction()">Add</button>
-            </div>
+    <div id="modal" style="display: none">
+      <div class="modal-window">
+        <div class="add-task">
+          <h2>Add a New Task</h2>
+          <button class="buttons-card" onclick="cancel()">
+            <img src="Group 13.svg" />
+          </button>
         </div>
+        <div class="form text">
+          <label class="label-name">Task Title</label>
+          <input type="text" id="title" class="input-task" />
+        </div>
+        <div class="form text">
+          <label class="label-name">Task description</label>
+          <input type="text" id="description" class="input-task" />
+        </div>
+        <div class="form select">
+          <label class="label-name">Assignee</label>
+          <select id="assignee" class="form-select">
+            <option></option>
+            <option>John Doe</option>
+            <option>Jane Doe</option>
+          </select>
+        </div>
+        <div class="form select">
+          <label class="label-name">Priority</label>
+          <select id="priority" class="form-select">
+            <option></option>
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+          </select>
+        </div>
+        <div class="form form-date">
+          <label class="label-name">Due Date</label>
+          <input id="date-modal" type="date" class="type-date" />
+        </div>
+        <div class="button-container" id="add-btn">
+          <button class="button" onclick="cancel()">Cancel</button>
+          <button class="button add" onclick="addTaskToLocalStorage()">Add</button>
+        </div>
+        <div class="button-container" id="edit-btn" style="display: none;">
+          <button class="button" onclick="cancel()">Cancel</button>
+          <button class="button add" onclick="updateTaskInLocalStorage()">Update</button>
+        </div>
+      </div>
     </div>
-</main>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
